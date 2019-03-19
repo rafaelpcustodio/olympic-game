@@ -1,0 +1,34 @@
+# ==============
+# = Data Source
+# ==============
+spring:
+  datasource:
+    url: jdbc:h2:mem:olympicgame;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=Oracle
+    platform: h2
+    username: olympicgame
+    password: olympicgame
+    driverClassName: org.h2.Driver
+
+# ==================
+# = Jpa / Hibernate
+# ==================
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: false
+        format_sql: false
+
+# ==============
+# = H2 settings
+# ==============
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
